@@ -1,0 +1,3 @@
+$(".js-destroy-target<%= params[:id] %>").remove();
+var comcnt = $(".comment_count").text();
+$(".comment_count").text(Number(comcnt)-1);

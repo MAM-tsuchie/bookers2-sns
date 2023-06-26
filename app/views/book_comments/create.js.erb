@@ -1,0 +1,4 @@
+$('.append-target').before("<%= j(render 'book_comments/comment', book_comment: @comment) %>")
+$("form").trigger("reset");
+var comcnt = $(".comment_count").text();
+$(".comment_count").text(Number(comcnt)+1);

@@ -1,0 +1,36 @@
+@use "~bootstrap/scss/bootstrap";
+
+a {
+  cursor: pointer;
+}
+
+.liked {
+  color: grey;
+  & a, input {
+    color: red;
+  }
+}
+
+.book_comment {
+  width: 100%;
+}
+.avatar {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.search-form {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.favorite-btn {
+  input {
+    padding: 0px;
+    font-size: 16px;
+  }
+}
+
+.destory-comment {
+  display: inline-block;
+}

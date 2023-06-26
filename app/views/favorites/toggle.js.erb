@@ -1,0 +1,6 @@
+$(".favorite-btn-<%= @book.id %>").html("<%= j(render 'favorites/favorite-btn', book: @book) %>");
+<% if @book.favorited_by?(current_user) %>
+$(".favorite-btn-<%= @book.id %>").addClass("liked");
+<% else %>
+$(".favorite-btn-<%= @book.id %>").removeClass("liked");
+<% end %>

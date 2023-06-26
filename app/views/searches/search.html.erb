@@ -1,0 +1,9 @@
+<h2><%= "#{params["target"]} search for \"#{params["search_word"]}\""%></h2>
+
+<% if @books.present? %>
+  <%= render 'books/index', books: @books%>
+<% elsif @users.present? %>
+  <%= render 'users/index', users: @users%>
+<% else %>
+  ヒットしませんでした。
+<% end %>
