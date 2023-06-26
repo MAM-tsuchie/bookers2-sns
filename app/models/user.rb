@@ -11,9 +11,13 @@ class User < ApplicationRecord
 
   has_many :followed_relations, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :follower_relations, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
-
   has_many :followeds, through: :follower_relations, source: :follower
   has_many :followers, through: :followed_relations, source: :followed
+
+  has_many :sender_relations, class_name: "DirectMessage", foreign_key: "sender_id", dependent: :destroy
+  has_many :receiver_relations, class_name: "DirectMessage", foreign_key: "receiver_id", dependent: :destroy
+  has_many :sender, through: :receiver_relations, source: :receiver
+  has_many :receiver, through: :sender_relations, source: :sender
 
   validates :name, length: { minimum: 2, maximum: 20 }, uniqueness: true
 

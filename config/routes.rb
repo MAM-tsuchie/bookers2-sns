@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     get :follows, on: :member
     get :followers, on: :member
     resource :relationship, only: [:create, :destroy]
+    resources :direct_messages, only: [:index, :create]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
